@@ -24,6 +24,6 @@ var lengthOfLongestSubstring = function(s) {
 };
 
 // 111111
-// 22222
-// 33333
+// 333333
+// 怎么回事呢
 console.log(lengthOfLongestSubstring('abc'))
