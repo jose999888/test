@@ -1,4 +1,11 @@
-# 学习记录文档 
+# 学习记录文档
+
+> ## 待学习
+> - [ ] ci/cd
+> - [ ] webwork是什么
+> - [ ] mptt
+> - [ ] 微前端
+> - [ ] vant 源码
 
 ## 一. vite打包
 
@@ -7,7 +14,7 @@
 - build.minify：terser 代码压缩工具（可以去掉console，可以压缩代码
 - assetsInlineLimit设置为0，防止静态资源图片被打包成base64
 - build.rollupOptions.out.entryFileNames是入口js文件名称，自己设置
-- ManualChunk:手动分包，优先级在chunkFilesName函数之上
+- ManualChunk:手动分包，优先级在chunkFilesName函数之上（也就是先手动分包并且定义名字，然后你在chunkFilesName函数上可以拿到你定义好名字的chunk包
 - 路由懒加载是路由懒加载，是切换到另一个页面才会加载对应的资源包，并不是分包就等于懒加载
 - 路由懒加载后，组件懒加载也是有用的
 - Path.resolve(__dirname,’src’)
