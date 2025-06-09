@@ -1,9 +1,13 @@
 /**
  * 寻找两个有序数组的中位数
+ *
+ * 分析：
+ * 1. 数组以短的为主，所以先判断数组长度，把短的放在前面面
+ * 2. i,j代表从a，b数组中取几个，并不是数组下标的意思
  * */
 
-const nums1 = [1,3]
-const nums2 = [2,3,4,5,6,7,8,9,10]
+const nums1 = [1,2]
+const nums2 = [3,4]
 
 const findMiddleNums = (nums1,nums2) => {
     if(nums1.length > nums2.length){
