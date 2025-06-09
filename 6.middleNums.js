@@ -20,32 +20,31 @@
  * */
 
 const findMedianSortedArrays = function(a, b) {
-    if(a.length > b.length){
+    if(a.length > b.length) {
         [a,b] = [b,a]
     }
     const m = a.length
     const n = b.length
-    const half = Math.floor((m + n + 1) / 2)
+    const middle = Math.floor((m + n + 1)/2)
 
-    let start = 0 , end = m
-    while(start < end){
-        const i = Math.floor((end + start +1)/2)
-        const j = half - i
-        if(a[i - 1] > b[j]){
-            end = i - 1
+    let left = 0,right = m
+    while(left < right){
+        const i = Math.floor((left + right + 1) / 2)
+        const j = middle - i
+
+        if(a[i-1] > b[j]){
+            right = i - 1
         }else {
-            start = i
+            left = i
         }
     }
-
-    console.log(start,end)
-    const x = start
-    const y = half - start
-    const l1Max = x === 0 ? -Infinity : a[x - 1]
-    const l1Min = m === x ? Infinity : a[x]
-    const l2Max = y === 0 ? -Infinity : b[y-1]
-    const l2Min = n === y ? Infinity : b[y]
-    return (m+n) % 2 === 0 ? (Math.max(l1Max,l2Max) + Math.min(l1Min,l2Min)) / 2 : Math.min(l1Max,l2Max)
+    const x = left
+    const y = middle - left
+    const al = x === 0 ? -Infinity : a[x - 1]
+    const ar = x === m ? Infinity : a[x]
+    const bl = y === 0 ? -Infinity : b[y - 1]
+    const br = y === n ? Infinity : b[y]
+    return (m+n) % 2 === 0 ? (Math.max(al,bl) + Math.min(ar,br))/2 : Math.max(al,bl)
 };
 
 console.log(findMedianSortedArrays([2,2,4,4], [2,2,2,2,4,4]))
