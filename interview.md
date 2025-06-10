@@ -2,6 +2,8 @@
 
 > ## 待学习
 > - [ ] ci/cd
+> - [ ] docker
+> - [ ] nginx
 > - [ ] webwork是什么
 > - [ ] mptt
 > - [ ] 微前端
