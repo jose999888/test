@@ -52,3 +52,9 @@
 ### 滑动窗口算法
   >- 定义【left ， right】，遍历+哈希表判断，当存在，就移动左指针，每次计算最长长度
 
+
+
+
+## 优秀插件
+- antfu  eslint插件
+- pinia-plugin-persistedstate pinia本地持久化插件
