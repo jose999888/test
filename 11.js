@@ -60,15 +60,38 @@ var addTwoNumbers = function(l1, l2) {
     return listNodeToList(dummy.next)
 };
 
-// const a = {
-//     b:1
-// }
-// a.b = a
-// console.log(a)
 
-const a = [0];
-Object.freeze(a); // 数组现在开始无法被修改
 
-a[0] = 1; // 静默失败
 
-console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
