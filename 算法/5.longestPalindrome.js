@@ -1,6 +1,12 @@
 /**
  * @param {string} s
  * @return {string}
+ *
+ * 用到了中心扩散法。
+ * 1. 遍历每一个项，以自己为中心，两边扩散对比，数组下标0开始，数组长度减1为终点
+ * 2. 数组值的数量计算方式为[m,n] => n-m + 1 ，例如：[0,2]含有0，1，2,=>2-0 +1 = 3
+ * 3. 所以当他不满足循环条件的时候，就计算出他的长度与之前的长度res比较，如果比他长，就替换他
+ * 4. 重点在于，遍历每一个值，且考虑奇数或偶数，所以每次传值都不一样
  */
 var longestPalindrome = function(s) {
     if (s.length<2){
@@ -8,9 +14,9 @@ var longestPalindrome = function(s) {
     }
     let res = ''
     for (let i = 0; i < s.length; i++) {
-        // 回文子串长度是奇数
+        // 以一个字符为中心
         helper(i, i)
-        // 回文子串长度是偶数
+        // 以两个字符为中心
         helper(i, i + 1)
     }
 
@@ -29,4 +35,4 @@ var longestPalindrome = function(s) {
     return res
 };
 
-console.log(longestPalindrome('babad'))
+console.log(longestPalindrome('abba'))
