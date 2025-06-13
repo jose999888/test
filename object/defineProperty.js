@@ -12,17 +12,16 @@ Object.defineProperty(obj,'fullName',{
         this.name2 = name2
     },
     enumerable:true,
-    configurable:false,
+    configurable:true,
     // writable:false,  当有get 或者 set的时候，就不能存在writable和value，会报错
     // value: 'jose roger'
 })
 Object.defineProperty(obj,'xuni',{
     value: undefined, //值
-    enumerable: false, // 可枚举，就是可以被遍历打印
+    enumerable: true, // 可枚举，就是可以被遍历打印
     writable: true, // 可以赋值操作
     configurable: true, //为false的时候不能删除
 })
 
 console.log(obj.fullName)
 obj.xuni = 1111
-console.log(obj)
