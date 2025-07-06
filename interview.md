@@ -52,6 +52,25 @@
 ### 滑动窗口算法
   >- 定义【left ， right】，遍历+哈希表判断，当存在，就移动左指针，每次计算最长长度
 
+## 四. 手写
+  >- 生成器函数，也就是手写set时候，有一个可迭代属性，生成器函数也就是帮你创造可迭代属性的东西
+  >- 可迭代属性是拥有next方法，且返回{value,done}，next还有值时候，done：false,没值时为true
+  >- 检测是否为可迭代对象
+  >- @see https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols
+  `````js
+      _isIterator(obj){
+        return (
+            obj&&obj[Symbol.iterator] && typeof obj[Symbol.iterator] === 'function'
+        )
+    }
+    // 生成器函数 本质for of 然后给每一项加next方法
+        *[Symbol.iterator](){
+        for (const item of this.#_data) {
+            yield item
+        }
+    }
+  `````
+
 
 ## 优秀插件
 - antfu  eslint插件
